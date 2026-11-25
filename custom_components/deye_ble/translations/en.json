@@ -1,0 +1,193 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Connect to Deye inverter",
+        "description": "Choose the logger stick (it appears as AP_ followed by its serial number). If it is not listed, make sure it is within range of a Bluetooth adapter or proxy.",
+        "data": {
+          "address": "Bluetooth device"
+        }
+      },
+      "bluetooth_confirm": {
+        "title": "Set up Deye BLE",
+        "description": "Add the Deye logger {name}? Close the Deye app first, because only one Bluetooth client can connect at a time."
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to the logger or find its Deye Bluetooth service. Close the Deye app and try again."
+    },
+    "abort": {
+      "already_configured": "This Bluetooth device is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Deye BLE settings",
+        "description": "Choose how the integration uses the Bluetooth link to the logger stick.",
+        "data": {
+          "connection_mode": "Connection mode",
+          "poll_interval": "Polling interval (seconds)",
+          "cloud_break": "Cloud upload break (minutes)"
+        },
+        "data_description": {
+          "connection_mode": "Connect on Demand connects for each poll and disconnects afterwards. Always Connected keeps the link open.",
+          "poll_interval": "Time between automatic polls, 10 to 300 seconds. While the inverter is asleep, in standby or off, polling slows to every 5 minutes.",
+          "cloud_break": "Always Connected mode only. Every this many minutes the Bluetooth link is released for 60 seconds so the logger can send its data to the Deye cloud. 0 turns this off. Not needed in Connect on Demand mode."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "pv1_voltage": {
+        "name": "PV1 Voltage"
+      },
+      "pv1_current": {
+        "name": "PV1 Current"
+      },
+      "pv1_power": {
+        "name": "PV1 Power"
+      },
+      "pv2_voltage": {
+        "name": "PV2 Voltage"
+      },
+      "pv2_current": {
+        "name": "PV2 Current"
+      },
+      "pv2_power": {
+        "name": "PV2 Power"
+      },
+      "pv_power": {
+        "name": "PV Power"
+      },
+      "grid_voltage_a": {
+        "name": "Grid Voltage"
+      },
+      "grid_current_a": {
+        "name": "Grid Current"
+      },
+      "grid_frequency": {
+        "name": "Grid Frequency"
+      },
+      "grid_output_power": {
+        "name": "Grid Output Power"
+      },
+      "power_factor": {
+        "name": "Power Factor"
+      },
+      "daily_generation": {
+        "name": "Daily Generation"
+      },
+      "total_generation": {
+        "name": "Total Generation"
+      },
+      "dc_temperature": {
+        "name": "Radiator Temperature"
+      },
+      "load_power": {
+        "name": "Load Power"
+      },
+      "meter_power": {
+        "name": "Meter Power"
+      },
+      "daily_load_energy": {
+        "name": "Daily Load Energy"
+      },
+      "total_load_energy": {
+        "name": "Total Load Energy"
+      },
+      "daily_export_energy": {
+        "name": "Daily Export Energy"
+      },
+      "total_export_energy": {
+        "name": "Total Export Energy"
+      },
+      "daily_import_energy": {
+        "name": "Daily Import Energy"
+      },
+      "total_import_energy": {
+        "name": "Total Import Energy"
+      },
+      "inverter_state": {
+        "name": "Inverter State"
+      },
+      "fault_codes": {
+        "name": "Fault Codes"
+      },
+      "warning_codes": {
+        "name": "Warning Codes"
+      },
+      "meter_type": {
+        "name": "Meter Type"
+      },
+      "control_firmware": {
+        "name": "Control Firmware"
+      },
+      "communication_firmware": {
+        "name": "Communication Firmware"
+      },
+      "serial_number": {
+        "name": "Serial Number"
+      },
+      "protocol_version": {
+        "name": "Protocol Version"
+      },
+      "safety_type": {
+        "name": "Safety Type"
+      },
+      "mppt_phases": {
+        "name": "MPPT / Phase Configuration"
+      },
+      "inverter_clock": {
+        "name": "Inverter Clock"
+      },
+      "rated_power": {
+        "name": "Rated Power"
+      },
+      "warning_register_1": {
+        "name": "Warning Register 1"
+      },
+      "warning_register_2": {
+        "name": "Warning Register 2"
+      },
+      "fault_register_1": {
+        "name": "Fault Register 1"
+      },
+      "fault_register_2": {
+        "name": "Fault Register 2"
+      },
+      "fault_register_3": {
+        "name": "Fault Register 3"
+      },
+      "fault_register_4": {
+        "name": "Fault Register 4"
+      },
+      "rssi": {
+        "name": "BLE RSSI"
+      },
+      "last_successful_update": {
+        "name": "Last Successful Update"
+      }
+    },
+    "switch": {
+      "ble_connection": {
+        "name": "BLE Connection"
+      },
+      "ble_polling": {
+        "name": "Automatic Polling"
+      }
+    },
+    "button": {
+      "poll_now": {
+        "name": "Poll Now"
+      }
+    },
+    "binary_sensor": {
+      "ble_connected": {
+        "name": "BLE Connected"
+      }
+    }
+  }
+}
