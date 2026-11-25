@@ -7,6 +7,9 @@
       "local_name": "AP_*"
     }
   ],
+  "categories": [
+    "energy"
+  ],
   "codeowners": [
     "@mahipat99"
   ],
@@ -18,8 +21,5 @@
   "integration_type": "device",
   "iot_class": "local_polling",
   "issue_tracker": "https://github.com/mahipat99/Deye-BLE/issues",
-  "version": "0.1.0",
-  "categories": [
-    "energy"
-  ]
+  "version": "0.1.0"
 }
